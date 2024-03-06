@@ -1,0 +1,35 @@
+
+.container {
+  display: flex;
+}
+
+.left {
+  border: 1px dotted black;
+  margin: 10px 5px 10px 10px;
+  padding: 10px 10px 10px 10px;
+  display: flex;
+  flex: 60%;
+  flex-direction: column;
+}
+
+.right {
+  border: 1px dotted black;
+  margin: 10px 10px 10px 5px;
+  padding: 10px 10px 10px 10px;
+  display: flex;
+  flex: 40%;
+  flex-direction: column;
+}
+
+
+.map {
+  border: 2px solid black;
+  height: 700px;
+}
+
+.debug-info {
+  margin: 5px 0px 5px 0px;
+  padding: 0px 5px 0px 5px;
+  background-color: #ECECEC;
+
+}

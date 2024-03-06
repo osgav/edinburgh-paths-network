@@ -1,0 +1,32 @@
+access_points_excerpt = {
+"type": "FeatureCollection",
+"name": "access_points_excerpt_03",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "fid": 25, "path_name": "Water of Leith Walkway", "access_via": "Connaught Place" }, "geometry": { "type": "Point", "coordinates": [ -3.19084657, 55.971526689999976 ] } },
+{ "type": "Feature", "properties": { "fid": 37, "path_name": "Water of Leith Walkway", "access_via": "Arboretum Avenue" }, "geometry": { "type": "Point", "coordinates": [ -3.211045668350396, 55.960129931842062 ] } },
+{ "type": "Feature", "properties": { "fid": 38, "path_name": "Water of Leith Walkway", "access_via": "Arboretum Avenue" }, "geometry": { "type": "Point", "coordinates": [ -3.211956984211573, 55.961340225208566 ] } },
+{ "type": "Feature", "properties": { "fid": 47, "path_name": "Water of Leith Walkway", "access_via": "Powderhall Road ish" }, "geometry": { "type": "Point", "coordinates": [ -3.193834501708777, 55.967794449812757 ] } },
+{ "type": "Feature", "properties": { "fid": 48, "path_name": "Water of Leith Walkway", "access_via": "Newhaven Road" }, "geometry": { "type": "Point", "coordinates": [ -3.18793496613445, 55.972642391251696 ] } },
+{ "type": "Feature", "properties": { "fid": 49, "path_name": "Water of Leith Walkway", "access_via": null }, "geometry": { "type": "Point", "coordinates": [ -3.187778896535876, 55.972481038545993 ] } },
+{ "type": "Feature", "properties": { "fid": 50, "path_name": "Water of Leith Walkway", "access_via": "Saunders Street" }, "geometry": { "type": "Point", "coordinates": [ -3.210531925801484, 55.956285565202904 ] } },
+{ "type": "Feature", "properties": { "fid": 51, "path_name": "Water of Leith Walkway", "access_via": null }, "geometry": { "type": "Point", "coordinates": [ -3.215703961430759, 55.95258281560946 ] } },
+{ "type": "Feature", "properties": { "fid": 52, "path_name": "Water of Leith Walkway", "access_via": null }, "geometry": { "type": "Point", "coordinates": [ -3.216410997673927, 55.952335172388644 ] } },
+{ "type": "Feature", "properties": { "fid": 53, "path_name": "Water of Leith Walkway", "access_via": "Hawthornbank Lane" }, "geometry": { "type": "Point", "coordinates": [ -3.21808635441079, 55.951734408502119 ] } },
+{ "type": "Feature", "properties": { "fid": 54, "path_name": "Water of Leith Walkway", "access_via": "Dean Path" }, "geometry": { "type": "Point", "coordinates": [ -3.219807348817265, 55.952873471452534 ] } },
+{ "type": "Feature", "properties": { "fid": 55, "path_name": "Water of Leith Walkway", "access_via": "Sunbury Place" }, "geometry": { "type": "Point", "coordinates": [ -3.222140028116367, 55.951613467308199 ] } },
+{ "type": "Feature", "properties": { "fid": 56, "path_name": "Water of Leith Walkway", "access_via": "Belford Road" }, "geometry": { "type": "Point", "coordinates": [ -3.222157330444932, 55.951100932274286 ] } },
+{ "type": "Feature", "properties": { "fid": 57, "path_name": "Water of Leith Walkway", "access_via": "Bell's Mills" }, "geometry": { "type": "Point", "coordinates": [ -3.221968964497111, 55.950103512989394 ] } },
+{ "type": "Feature", "properties": { "fid": 58, "path_name": "Water of Leith Walkway", "access_via": null }, "geometry": { "type": "Point", "coordinates": [ -3.221862108176294, 55.949792966271033 ] } },
+{ "type": "Feature", "properties": { "fid": 59, "path_name": "Water of Leith Walkway", "access_via": "Magdala Crescent" }, "geometry": { "type": "Point", "coordinates": [ -3.224173543511855, 55.949116756254952 ] } },
+{ "type": "Feature", "properties": { "fid": 61, "path_name": "Water of Leith Walkway", "access_via": "West Bowling Green Street" }, "geometry": { "type": "Point", "coordinates": [ -3.181272144954454, 55.972951776810575 ] } },
+{ "type": "Feature", "properties": { "fid": 62, "path_name": "Water of Leith Walkway", "access_via": "West Bowling Green Street" }, "geometry": { "type": "Point", "coordinates": [ -3.180584019201159, 55.972800176227402 ] } },
+{ "type": "Feature", "properties": { "fid": 63, "path_name": "Water of Leith Walkway", "access_via": "West Bowling Green Street" }, "geometry": { "type": "Point", "coordinates": [ -3.179879696761362, 55.97291285989634 ] } },
+{ "type": "Feature", "properties": { "fid": 64, "path_name": "Water of Leith Walkway", "access_via": "West Bowling Green Street" }, "geometry": { "type": "Point", "coordinates": [ -3.179857261804623, 55.972856365683953 ] } },
+{ "type": "Feature", "properties": { "fid": 65, "path_name": "Water of Leith Walkway", "access_via": "Anderson Place" }, "geometry": { "type": "Point", "coordinates": [ -3.181993950411019, 55.972094969324964 ] } },
+{ "type": "Feature", "properties": { "fid": 66, "path_name": "Water of Leith Walkway", "access_via": "Anderson Place" }, "geometry": { "type": "Point", "coordinates": [ -3.182055320757772, 55.972089411268293 ] } },
+{ "type": "Feature", "properties": { "fid": 67, "path_name": "Water of Leith Walkway", "access_via": "Haig Lane" }, "geometry": { "type": "Point", "coordinates": [ -3.185117999725991, 55.971226338065868 ] } },
+{ "type": "Feature", "properties": { "fid": 68, "path_name": "Water of Leith Walkway", "access_via": "Wintermill Square" }, "geometry": { "type": "Point", "coordinates": [ -3.186441303024531, 55.971429700079909 ] } },
+{ "type": "Feature", "properties": { "fid": 69, "path_name": "Water of Leith Walkway", "access_via": "Newhaven Road" }, "geometry": { "type": "Point", "coordinates": [ -3.187488352435812, 55.971912118081406 ] } }
+]
+};

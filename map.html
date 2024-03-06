@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="content-language" content="en" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+  <title>Edinburgh Paths Network Map</title>
+
+  <link rel="stylesheet" href="style.css" />
+
+  <link rel="stylesheet" href="leaflet-1.9.3/leaflet.css"
+    integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
+    crossorigin="" />
+  <script type="text/javascript" src="leaflet-1.9.3/leaflet.js"
+    integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
+    crossorigin=""></script>
+
+    <!--<script type="text/javascript" src="sql.js-0.3.2/sql.js"></script>-->
+    <!--<script type="text/javascript" src="leaflet.tilelayer.mbtiles/Leaflet.TileLayer.MBTiles.js"></script>-->
+
+  <script type="text/javascript" src="protomaps-leaflet-3.0.1/protomaps-leaflet.min.js"></script>
+
+  <script defer type="text/javascript" src="script.js"></script>
+  <script type="text/javascript" src="access_points_excerpt.js"></script>
+  <script type="text/javascript" src="paths_excerpt.js"></script>
+</head>
+
+<body>
+
+  <h1>Edinburgh Paths Network Map</h1>
+
+  <div class="container">
+
+    <div class="left">
+      <div id="map" class="map"></div>
+      <div class="debug-info">
+        <span id="zoom"></span><br>
+	<span id="bounds"></span><br>
+	<span id="center"></span><br> 
+	<span id="mouse">Mouse location:</span><br> 
+      </div>
+    </div>
+
+    <div class="right">
+      <p><b>hello world</b></p>
+    </div>
+
+  </div>
+
+</body>
+</html>
+
