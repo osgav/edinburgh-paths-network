@@ -55,10 +55,25 @@ basemap.addTo(map);
 
 
 ////////////////////////////////////////////////////////////////////////////////
+// configure point styles
+//
+var style_point = {
+    radius: 16,
+    weight: 4,
+    color: "#008800",
+    fillColor: "#008800",
+    fillOpacity: 0.25,
+    opacity: 1,
+};
+
+
+////////////////////////////////////////////////////////////////////////////////
 // load features
 //
 const access_points = L.geoJson(access_points_excerpt, {
-  style,
+  pointToLayer: function (feature, latlng) {
+    return L.circle(latlng, style_point);
+  },
   onEachFeature
 }).addTo(map);
 
