@@ -1,0 +1,40 @@
+
+body {
+  padding: 0;
+  margin: 0;
+}
+
+html, body, #map {
+  height: 100dvh;
+  width: 100vw;
+}
+
+.debug-info {
+  margin: 0px 0px 20px 15px;
+  padding: 5px;
+  position: absolute;
+  bottom: 0px;
+  z-index: 1000;
+  background-color: rgba(70, 70, 70, 0.7);
+  color: #FDFDFD;
+  font-family: monospace;
+}
+
+.hidden {
+  display: none;
+}
+
+.debug-table {
+  border-spacing: 0px;
+}
+
+.debug-table span {
+  font-weight: bold;
+  padding-left: 5px;
+}
+
+.leaflet-control-debug-button {
+  font: bold 18px monospace;
+  text-indent: 1px;
+}
+

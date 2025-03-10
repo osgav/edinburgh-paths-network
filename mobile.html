@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="content-language" content="en" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+  <title>Edinburgh Paths Network Map</title>
+
+  <link rel="stylesheet" href="style.mobile.css" />
+
+  <link rel="stylesheet" href="leaflet-1.9.3/leaflet.css"
+    integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
+    crossorigin="" />
+  <script type="text/javascript" src="leaflet-1.9.3/leaflet.js"
+    integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
+    crossorigin=""></script>
+
+  <script type="text/javascript" src="protomaps-leaflet-3.0.1/protomaps-leaflet.min.js"></script>
+
+  <script type="text/javascript" src="access_points_excerpt.js"></script>
+  <script type="text/javascript" src="primary_path_network.js"></script>
+  <script defer type="text/javascript" src="script.mobile.js"></script>
+
+</head>
+
+<body>
+
+  <div id="map" class="map"></div>
+
+      <div class="debug-info hidden">
+        <table class="debug-table">
+          <tr><td>Zoom level:</td><td><span id="zoom"></span></td>
+          <tr><td>Bounds:</td><td><span id="bounds"></span></td>
+          <tr><td>Map center:</td><td><span id="center"></span></td>
+          <tr><td>Mouse location:</td><td><span id="mouse"></span></td>
+        </table>
+      </div>
+
+</body>
+</html>
+
