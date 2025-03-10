@@ -62,7 +62,7 @@ const access_points = L.geoJson(access_points_excerpt, {
   onEachFeature
 }).addTo(map);
 
-const paths = L.geoJson(paths_excerpt, {
+const paths = L.geoJson(primary_path_network, {
   style,
   onEachFeature
 }).addTo(map);
