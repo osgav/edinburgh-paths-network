@@ -75,7 +75,8 @@ const access_points = L.geoJson(access_points_excerpt, {
     return L.circle(latlng, style_point);
   },
   onEachFeature
-}).addTo(map);
+//}).addTo(map);
+});
 
 const paths = L.geoJson(primary_path_network, {
   style,
@@ -104,3 +105,14 @@ function onEachFeature(feature, layer) {
 }
 
 
+var pointMarkers = new L.FeatureGroup();
+pointMarkers.addLayer(access_points);
+
+map.on("zoomend", function() {
+  if (map.getZoom() < 14) {
+    map.removeLayer(pointMarkers);
+    //paths.setStyle(f => ({weight: 5}));
+  } else {
+    map.addLayer(pointMarkers);
+  }
+});
