@@ -92,7 +92,7 @@ function zoomToFeature(e) {
 
 function style(feature) {
   return {
-    weight: 3,
+    weight: 2.5,
     color: "#000000",
   };
 }
