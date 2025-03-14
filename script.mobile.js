@@ -135,7 +135,8 @@ const paths = L.geoJson(primary_path_network, {
 const spurs = L.geoJson(access_spurs, {
   style: styleSpur,
   onEachFeature
-}).addTo(map);
+//}).addTo(map);
+});
 
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -170,6 +171,9 @@ function onEachFeature(feature, layer) {
 var pointMarkers = new L.FeatureGroup();
 pointMarkers.addLayer(access_points);
 
+var spurLines = new L.FeatureGroup();
+spurLines.addLayer(spurs);
+
 map.on("zoomend", function() {
   if (map.getZoom() < 14) {
     map.removeLayer(pointMarkers);
@@ -177,4 +181,11 @@ map.on("zoomend", function() {
   } else {
     map.addLayer(pointMarkers);
   }
+
+  if (map.getZoom() < 17) {
+    map.removeLayer(spurLines);
+  } else {
+    map.addLayer(spurLines);
+  }
+
 });
