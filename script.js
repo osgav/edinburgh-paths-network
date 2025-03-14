@@ -4,7 +4,7 @@
 //
 var map = L.map("map", {
   zoomSnap: 0.05
-}) .setView([55.9400, -3.1925], 12.35);
+}) .setView([55.9688, -3.1925], 12);
 
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -79,12 +79,12 @@ const access_points = L.geoJson(access_points_excerpt, {
 });
 
 const paths = L.geoJson(primary_path_network, {
-  style,
+  style: stylePath,
   onEachFeature
 }).addTo(map);
 
 const spurs = L.geoJson(access_spurs, {
-  style,
+  style: styleSpur,
   onEachFeature
 }).addTo(map);
 
@@ -92,15 +92,23 @@ const spurs = L.geoJson(access_spurs, {
 ////////////////////////////////////////////////////////////////////////////////
 // ...
 //
-function zoomToFeature(e) {
-  map.fitBounds(e.target.getBounds());
-}
-
-function style(feature) {
+function stylePath(feature) {
   return {
-    weight: 2.5,
+    weight: 3,
     color: "#000000",
   };
+}
+
+function styleSpur(feature) {
+  return {
+    weight: 2,
+    color: "#000000",
+    dashArray: "3 5",
+  };
+}
+
+function zoomToFeature(e) {
+  map.fitBounds(e.target.getBounds());
 }
 
 function onEachFeature(feature, layer) {
