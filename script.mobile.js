@@ -132,6 +132,11 @@ const paths = L.geoJson(primary_path_network, {
   onEachFeature
 }).addTo(map);
 
+const spurs = L.geoJson(access_spurs, {
+  style,
+  onEachFeature
+}).addTo(map);
+
 
 ////////////////////////////////////////////////////////////////////////////////
 // ...
