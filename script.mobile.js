@@ -122,18 +122,37 @@ var style_point = {
     opacity: 1,
 };
 
+var style_point_curated = {
+    radius: 40,
+    weight: 4,
+    color: "#000000",
+    fillColor: "#FFAD0A",
+    fillOpacity: 0.5,
+    opacity: 1,
+};
+
+var style_point_primary = {
+    radius: 15,
+    weight: 3,
+    color: "#000000",
+    fillColor: "#FFAD0A",
+    fillOpacity: 0.5,
+    opacity: 1,
+};
+
+var style_point_secondary = {
+    radius: 8,
+    weight: 2,
+    color: "#000000",
+    fillColor: "#FFAD9A",
+    fillOpacity: 0.5,
+    opacity: 1,
+};
+
 
 ////////////////////////////////////////////////////////////////////////////////
 // load features
 //
-const access_points = L.geoJson(access_points_excerpt, {
-  pointToLayer: function (feature, latlng) {
-    return L.circle(latlng, style_point);
-  },
-  onEachFeature
-//}).addTo(map);
-});
-
 const paths = L.geoJson(primary_path_network, {
   style: stylePath,
   onEachFeature
@@ -144,6 +163,25 @@ const spurs = L.geoJson(access_spurs, {
   onEachFeature
 });
 
+const access_points_curated = L.geoJson(access_points_primary_curated, {
+  pointToLayer: function (feature, latlng) {
+    return L.circleMarker(latlng, style_point_curated);
+  },
+  onEachFeature
+});
+
+const access_points_primary = L.geoJson(access_points_primary_all, {
+  pointToLayer: function (feature, latlng) {
+    return L.circle(latlng, style_point_primary);
+  },
+  onEachFeature
+});
+
+const access_points_secondary = L.geoJson(access_points_secondary_all, {
+  pointToLayer: function (feature, latlng) {
+    return L.circle(latlng, style_point_secondary);
+  },
+  onEachFeature
 });
 
 
@@ -175,25 +213,44 @@ function onEachFeature(feature, layer) {
   });
 }
 
+var accessPrimary = new L.FeatureGroup();
+accessPrimary.addLayer(access_points_curated).addTo(map);
 
-var pointMarkers = new L.FeatureGroup();
-pointMarkers.addLayer(access_points);
+var accessSecondary = new L.FeatureGroup();
+accessSecondary.addLayer(access_points_secondary);
+
 
 var spurLines = new L.FeatureGroup();
 spurLines.addLayer(spurs);
 
-map.on("zoomend", function() {
-  if (map.getZoom() < 14) {
-    map.removeLayer(pointMarkers);
+map.on("zoomend overlayadd overlayremove", function() {
+  if (map.getZoom() <= 12) {
+    if (map.hasLayer(accessPrimary)) {
+      map.removeLayer(accessPrimary);
+    }
     //paths.setStyle(f => ({weight: 5}));
   } else {
-    map.addLayer(pointMarkers);
+    if (map.hasLayer(accessPrimary)) {
+      map.addLayer(accessPrimary);
+    }
   }
 
-  if (map.getZoom() < 17) {
+  if (map.getZoom() < 16) {
     map.removeLayer(spurLines);
+    if (map.hasLayer(accessPrimary)) {
+      accessPrimary.addLayer(access_points_curated);
+      accessPrimary.removeLayer(access_points_primary);
+    }
   } else {
     map.addLayer(spurLines);
+    if (map.hasLayer(accessPrimary)) {
+      accessPrimary.removeLayer(access_points_curated);
+      accessPrimary.addLayer(access_points_primary);
+    }
   }
 
 });
+
+
+layerControl.addOverlay(accessPrimary, '<div class="legend-primary-access-points"></div> primary access points');
+layerControl.addOverlay(accessSecondary, '<div class="legend-secondary-access-points"></div> secondary access points');
