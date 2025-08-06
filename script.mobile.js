@@ -18,6 +18,7 @@ map.on("zoomstart zoom zoomend", updateDebugInfoZoom);
 map.on("zoomstart zoom zoomend movestart move moveend", updateDebugInfoBounds);
 map.on("zoomstart zoom zoomend movestart move moveend", updateDebugInfoCenter);
 map.on("mousemove", updateDebugInfoMouse);
+map.on("zoomstart zoom zoomend movestart move moveend", updateDebugCrosshair);
 
 function updateDebugInfoZoom(event) {
   const debugInfoZoom = document.querySelector("#zoom");
@@ -50,6 +51,19 @@ function updateDebugInfoMouse(event) {
   debugInfoMouse.textContent = `${mouseLat},${mouseLng}`;
 }
 
+var crosshairIcon = L.icon({
+  iconUrl:    "freesvg.org_Crosshairs-3456.svg",
+  iconSize:   [45, 45],
+  iconAnchor: [23, 23],
+  className:  "debug-crosshair invisible",
+});
+
+var crosshairMarker = L.marker(map.getCenter(), {icon: crosshairIcon}).addTo(map);
+
+function updateDebugCrosshair(event) {
+  crosshairMarker.setLatLng(map.getCenter());
+}
+
 // borrowed from https://stackoverflow.com/q/31924890
 //
 var debugControl = L.Control.extend({
@@ -69,6 +83,8 @@ var debugControl = L.Control.extend({
     anchor.onclick = function() {
       const debugInfo = document.querySelector(".debug-info");
       debugInfo.classList.toggle("hidden");
+      const debugCrosshair = document.querySelector(".debug-crosshair");
+      debugCrosshair.classList.toggle("hidden");
       // return focus to the map.
       // without this, the button remains in focus/hover state
       // until you click on the map again.

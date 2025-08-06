@@ -24,6 +24,10 @@ html, body, #map {
   display: none;
 }
 
+.invisible {
+  visibility: hidden;
+}
+
 .debug-table {
   border-spacing: 0px;
 }
@@ -36,6 +40,11 @@ html, body, #map {
 .leaflet-control-debug-button {
   font: bold 18px monospace;
   text-indent: 1px;
+}
+
+.debug-crosshair {
+  background-color: rgba(255, 0, 0, 0.4);
+  border-radius: 42px;
 }
 
 .legend-primary-access-points {
