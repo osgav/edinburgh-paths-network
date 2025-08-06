@@ -142,7 +142,8 @@ const paths = L.geoJson(primary_path_network, {
 const spurs = L.geoJson(access_spurs, {
   style: styleSpur,
   onEachFeature
-//}).addTo(map);
+});
+
 });
 
 
@@ -151,14 +152,14 @@ const spurs = L.geoJson(access_spurs, {
 //
 function stylePath(feature) {
   return {
-    weight: 3,
+    weight: 2,
     color: "#000000",
   };
 }
 
 function styleSpur(feature) {
   return {
-    weight: 2,
+    weight: 1.5,
     color: "#000000",
     dashArray: "3 5",
   };
