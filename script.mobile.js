@@ -92,15 +92,22 @@ map.addControl(new debugControl());
 ////////////////////////////////////////////////////////////////////////////////
 // configure basemap
 //
-//let tileURL = "https://tile.openstreetmap.org/{z}/{x}/{y}.png"
-//let attr = '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-//L.tileLayer(tileURL, {
-//    maxZoom: 19,
-//    attribution: attr 
-//}).addTo(map);
+var protomaps_light = protomapsL.leafletLayer({url: "edinburgh.pmtiles", theme: "light"});
+var protomaps_dark = protomapsL.leafletLayer({url: "edinburgh.pmtiles", theme: "dark"});
+var protomaps_white = protomapsL.leafletLayer({url: "edinburgh.pmtiles", theme: "white"});
+var protomaps_black = protomapsL.leafletLayer({url: "edinburgh.pmtiles", theme: "black"});
+var protomaps_grayscale = protomapsL.leafletLayer({url: "edinburgh.pmtiles", theme: "grayscale" });
+protomaps_grayscale.addTo(map);
 
-var basemap = protomapsL.leafletLayer({url: "edinburgh.pmtiles", theme: "white"});
-basemap.addTo(map);
+var baseMaps = {
+  "Protomaps Light": protomaps_light,
+  "Protomaps Dark": protomaps_dark,
+  "Protomaps White": protomaps_white,
+  "Protomaps Black": protomaps_black,
+  "Protomaps Grayscale": protomaps_grayscale,
+};
+
+var layerControl = L.control.layers(baseMaps, null, {position: 'topleft'}).addTo(map);
 
 
 ////////////////////////////////////////////////////////////////////////////////
