@@ -84,7 +84,7 @@ var debugControl = L.Control.extend({
       const debugInfo = document.querySelector(".debug-info");
       debugInfo.classList.toggle("hidden");
       const debugCrosshair = document.querySelector(".debug-crosshair");
-      debugCrosshair.classList.toggle("hidden");
+      debugCrosshair.classList.toggle("invisible");
       // return focus to the map.
       // without this, the button remains in focus/hover state
       // until you click on the map again.
